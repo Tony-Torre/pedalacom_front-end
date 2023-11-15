@@ -3,7 +3,7 @@ pedalacom
 
 1. **NON SI PUSHA SU MAIN**
    - penalità: vi gestite voi il revert
-2. **NON SI PUSHA SU DEVELPMENT**
+2. **NON SI PUSHA SU DEVELOPMENT**
    - penalità: vi gestite voi il revert
 
 ---
