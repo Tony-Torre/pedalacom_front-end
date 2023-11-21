@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Betacom\\Desktop\\Esercitazioni\\WebAppPedalaCom\\WebAppPedalaCom.csproj": {}
+    "C:\\Users\\admin\\source\\repos\\pedalacom\\WebAppPedalaCom\\WebAppPedalaCom.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Betacom\\Desktop\\Esercitazioni\\WebAppPedalaCom\\WebAppPedalaCom.csproj": {
+    "C:\\Users\\admin\\source\\repos\\pedalacom\\WebAppPedalaCom\\WebAppPedalaCom.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Betacom\\Desktop\\Esercitazioni\\WebAppPedalaCom\\WebAppPedalaCom.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\pedalacom\\WebAppPedalaCom\\WebAppPedalaCom.csproj",
         "projectName": "WebAppPedalaCom",
-        "projectPath": "C:\\Users\\Betacom\\Desktop\\Esercitazioni\\WebAppPedalaCom\\WebAppPedalaCom.csproj",
-        "packagesPath": "C:\\Users\\Betacom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Betacom\\Desktop\\Esercitazioni\\WebAppPedalaCom\\obj\\",
+        "projectPath": "C:\\Users\\admin\\source\\repos\\pedalacom\\WebAppPedalaCom\\WebAppPedalaCom.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\source\\repos\\pedalacom\\WebAppPedalaCom\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Betacom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
