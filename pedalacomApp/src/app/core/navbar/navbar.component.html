@@ -1,1 +1,78 @@
-<p>navbar works!</p>
+<nav class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+  <div class=" justify-content-between big_navbar">
+    <div class="left-side d-flex gap-2">
+      <h1>PedroBike</h1>
+      <div class="link d-flex gap-2 align-items-center">
+        <button class="single-link btn">Home</button>
+        <button class="single-link btn">Prodotti</button>
+        <button class="single-link btn">Contatti</button>
+        <button class="single-link btn">Donne</button>
+      </div>
+    </div>
+    <div class="mid-side">
+      <form class="d-flex" role="search">
+        <input class="form-control" type="search" placeholder="Cerca una donna" aria-label="Search">
+        <button class="btn btn-outline-success btn-cerca" type="submit">Cerca</button>
+      </form>
+    </div>
+    <div class="right-side d-flex">
+      <!-- <button class="btn" style="font-size: 1.3em;">
+        <i class="fa-solid fa-user"></i>
+      </button> -->
+      <!--  -->
+          <a class="nav-link btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn" style="font-size: 1.3em;">
+              <i class="fa-solid fa-user"></i>
+            </button>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Accedi</a></li>
+            <li><a class="dropdown-item" href="#">Registrati</a></li>
+          </ul>
+      <!--  -->
+      <a class="btn" style="font-size: 1.3em;">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </a>
+    </div>
+  </div>
+  <div class="small_navbar justify-content-between">
+    <div class="left-small-side">
+      <button class="btn" style="font-size: 2em;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <div class="offcanvas-title" id="offcanvasExampleLabel">PedroBike</div>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="link-small d-flex align-items-center flex-column">
+            <div class="single-link-small btn">Home</div>
+            <div class="single-link-small btn">Prodotti</div>
+            <div class="single-link-small btn">Contatti</div>
+            <div class="single-link-small btn">Donne</div>
+            <div class="d-flex">
+              <button class="btn" style="font-size: 1.5em;">
+                <i class="fa-solid fa-user"></i>
+              </button>
+              <button class="btn" style="font-size: 1.5em;">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mid-small-size" >
+      <button class="btn" style="font-size: 2em;">
+        <i class="fa-brands fa-facebook"></i>
+      </button>
+    </div>
+    <div class="right-small-size">
+      <button class="btn" style="font-size: 2em;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </div>
+</nav>
