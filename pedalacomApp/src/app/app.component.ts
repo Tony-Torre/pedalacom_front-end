@@ -6,11 +6,12 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // for SPA RouteLinks
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { CarouselComponent } from './model/carousel/carousel.component';
+import { SalesSectionComponent } from './model/SalesSection/SalesSection.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, HttpClientModule, NgbModule, NavbarComponent,CarouselComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, HttpClientModule, NgbModule, NavbarComponent, CarouselComponent, SalesSectionComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
