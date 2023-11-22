@@ -1,0 +1,50 @@
+.big_navbar{
+    padding-top: 10px;
+    display: flex;
+    .single-link{
+        font-size: 1.3em;
+        &:hover{
+            background-color: rgb(206, 206, 206);
+        }
+    }
+    .mid-side{
+        .btn-cerca:hover{
+            background-color: #458D80;
+        }
+    }
+}
+
+.small_navbar{
+    display: none;
+}
+
+
+
+
+
+@media screen and (max-width: 900px) {
+    .big_navbar{
+        display: none;
+    }
+    .small_navbar{
+        display: flex;
+        .link-small{
+            display: flex;
+            gap: 20px;
+            height: 100%;
+            justify-content: center;
+            .single-link-small{
+                text-align: center;
+                width: 100%;
+                font-size: 1.5em;
+            }
+        }
+        .offcanvas-title{
+            width: 100%;
+            font-size: 2em;
+            text-align: center;
+            margin-left: 40px;
+            font-weight: bold;
+        }
+    }
+  }
