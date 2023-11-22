@@ -2,10 +2,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http'; // To import if API call in Child Module
-import { RouterOutlet } from '@angular/router';
-import { RouterLink } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // for SPA RouteLinks
-// IMPORT  CUSTOM COMPONENTS
+import { NavbarComponent } from './core/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
@@ -18,3 +17,4 @@ export class AppComponent {
   title = 'pedalacomApp';
   constructor(private NgbModule: NgbModule) { }
 }
+
