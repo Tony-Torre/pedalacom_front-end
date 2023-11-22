@@ -6,12 +6,11 @@ import { RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // for SPA RouteLinks
 // IMPORT  CUSTOM COMPONENTS
-import { CardComponent } from './model/bikecard/card.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, HttpClientModule, NgbModule, CardComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, HttpClientModule, NgbModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
