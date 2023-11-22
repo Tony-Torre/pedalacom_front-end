@@ -1,1 +1,77 @@
-<p>navbar works!</p>
+<nav>
+  <div class="m-2 justify-content-between big_navbar">
+    <div class="left-side d-flex gap-2">
+      <h2>PedroBike</h2>
+      <div class="link d-flex gap-2 align-items-center">
+        <button class="single-link btn">Home</button>
+        <button class="single-link btn">Prodotti</button>
+        <button class="single-link btn">Contatti</button>
+        <button class="single-link btn">Donne</button>
+      </div>
+    </div>
+    <div class="mid-side">
+      <form class="d-flex" role="search">
+        <input class="form-control" type="search" placeholder="Cerca una donna" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Cerca</button>
+      </form>
+    </div>
+    <div class="right-side d-flex">
+      <!-- <button class="btn" style="font-size: 1.3em;">
+        <i class="fa-solid fa-user"></i>
+      </button> -->
+      <!--  -->
+          <a class="nav-link btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn" style="font-size: 1.3em;">
+              <i class="fa-solid fa-user"></i>
+            </button>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Accedi</a></li>
+            <li><a class="dropdown-item" href="#">Registrati</a></li>
+          </ul>
+      <!--  -->
+      <button class="btn" style="font-size: 1.3em;">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
+    </div>
+  </div>
+  <div class="small_navbar justify-content-between">
+    <div class="left-small-side">
+      <button class="btn" style="font-size: 2em;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+          </div>
+          <div class="dropdown mt-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mid-small-size" >
+      <button class="btn" style="font-size: 2em;">
+        <i class="fa-brands fa-facebook"></i>
+      </button>
+    </div>
+    <div class="right-small-size">
+      <button class="btn" style="font-size: 2em;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </div>
+</nav>
