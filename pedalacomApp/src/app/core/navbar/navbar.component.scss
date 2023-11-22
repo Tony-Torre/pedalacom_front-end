@@ -1,0 +1,16 @@
+.big_navbar{
+    display: flex;
+}
+
+.small_navbar{
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .big_navbar{
+        display: none;
+    }
+    .small_navbar{
+        display: flex;
+    }
+  }
