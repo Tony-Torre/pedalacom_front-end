@@ -9,7 +9,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, HttpClientModule, NgbModule],
+  imports: [CommonModule, RouterOutlet, RouterLink, HttpClientModule, NgbModule, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
