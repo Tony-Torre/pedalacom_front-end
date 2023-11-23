@@ -10,8 +10,8 @@
             flex-wrap: wrap;
 
             button {
-                background-color: #6fa8be;
-                border: 1px solid #5c9ab3;
+                background-color: var(--primary);
+                border: 3px solid var(--darker-primary);
                 font-size: 23px;
                 text-transform: uppercase;
             }
