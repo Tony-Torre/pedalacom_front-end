@@ -1,0 +1,16 @@
+:root {
+    --main-background: #efeeee;
+
+    --section-background: #e1dddddb;
+    --section-darker-background: #c1bebedb;
+
+    --primary: #6fa8be;
+    --darker-primary: #5c9ab3;
+
+    --accent: #458D80;
+    --darker-accent: #3a766b;
+
+    --secondary: #f1f5f9;
+
+    --text: #02050d;
+}
