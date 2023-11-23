@@ -1,13 +1,48 @@
 .sectionContainer {
     height: max-content;
+    
     section {
         background: linear-gradient(to bottom, rgba(225, 221, 221, 0.859) 70%, rgba(193, 190, 190, 0.859) 30%);
         min-height: 400px;
-        button {
-            background-color: #6fa8be;
-            border: 1px solid #5c9ab3;
-            font-size: 23px;
-            text-transform: uppercase;
+
+        .rows {
+            display: flex;
+            flex-wrap: wrap;
+
+            button {
+                background-color: #6fa8be;
+                border: 1px solid #5c9ab3;
+                font-size: 23px;
+                text-transform: uppercase;
+            }
+        }
+        @media (max-width: 1360px) and (min-width: 1070px) {
+            .rows{
+                border: 1px solid blue;
+                padding-top: 7%;
+            }
+        }
+    
+        @media (max-width: 1070px) and (min-width: 940px) {
+            .rows {
+                border: 1px solid red;
+                padding-top: 9%;
+            }
+        }
+
+        @media (max-width: 940px) and (min-width: 825px) {
+            .rows {
+                border: 1px solid green;
+                padding-top: 14%;
+            }
+        }
+    
+        @media (max-width: 826px) {
+            .rows {
+                display: block;
+                border: none;  // Rimuovi il bordo se necessario per questa dimensione
+                padding-top: 2%; // Rimuovi il padding-top se necessario per questa dimensione
+            }
         }
     }
 }
