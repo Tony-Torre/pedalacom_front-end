@@ -10,7 +10,7 @@ form {
 }
 
 .form-check-input {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -25,7 +25,7 @@ input, select {
     &:hover {
         color: rgb(238, 236, 231);
         background-color: var(--darker-accent);   
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 
     }
 }

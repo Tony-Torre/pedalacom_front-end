@@ -9,11 +9,12 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { CarouselComponent } from './model/carousel/carousel.component';
 import { SalesSectionComponent } from './model/SalesSection/SalesSection.component';
 import { RegisterComponent } from './core/register/register.component';
+import { LoginComponent } from './core/login/login.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, HttpClientModule, NgbModule, RegisterComponent, NavbarComponent, CarouselComponent, SalesSectionComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, HttpClientModule, NgbModule, LoginComponent, RegisterComponent, NavbarComponent, CarouselComponent, SalesSectionComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
