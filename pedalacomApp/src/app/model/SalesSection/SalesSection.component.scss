@@ -11,9 +11,14 @@
 
             button {
                 background-color: var(--primary);
-                border: 3px solid var(--darker-primary);
                 font-size: 23px;
                 text-transform: uppercase;
+                &:hover {
+                    color: rgb(238, 236, 231);
+                    background-color: var(--darker-accent);   
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            
+                }
             }
         }
         @media (max-width: 1360px) and (min-width: 1070px) {
