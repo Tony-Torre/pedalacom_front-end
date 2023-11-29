@@ -3,3 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+main {
+    max-width: 1359px;
+    margin-top: 66px; // set equal to header height(66px)
+}

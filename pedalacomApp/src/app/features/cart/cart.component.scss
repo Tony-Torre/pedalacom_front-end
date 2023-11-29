@@ -1,0 +1,13 @@
+.cart-item-container {
+    border-radius: 8px;
+    &:hover {
+        background-color: var(--section-darker-background);
+    }
+}
+
+.image-cart{
+    border-radius:8px ;
+    width: auto;
+    height: 48px;
+    object-fit: contain;
+}
