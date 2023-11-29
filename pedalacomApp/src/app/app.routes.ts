@@ -5,7 +5,7 @@ import { ProductsComponent } from './features/products/products.component';
 import { CartComponent } from './features/cart/cart.component';
 import { ContactsComponent } from './features/contacts/contacts.component';
 // IN-PAGE ROUTES
-import { BikepageComponent } from './model/bikePage/bikepage.component';
+import { BikepageComponent } from './features/bikePage/bikepage.component';
 
 export const routes: Routes = [
     // NAVBAR ROUTES
@@ -14,6 +14,6 @@ export const routes: Routes = [
     {path: 'cart', component: CartComponent},
     {path: 'contacts', component: ContactsComponent},
     // IN-PAGE ROUTES
-    {path: 'bike', component: BikepageComponent},
+    {path: 'products/bike', component: BikepageComponent},
     //{path:'', redirectTo: 'home', pathMatch: 'full'} redirect path!
 ];
