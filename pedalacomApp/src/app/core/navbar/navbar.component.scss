@@ -8,11 +8,23 @@
         }
     }
     .mid-side{
+        min-width: 30%;
         .btn-cerca:hover{
             background-color: #458D80;
         }
     }
+
+
+    .nav-icon {
+        transition: transform 0.3s ease-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
 }
+
 
 .small_navbar{
     display: none;
