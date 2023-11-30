@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebAppPedalaCom.Models;
 
 public partial class CwCustomer
 {
+    [Key]
     public int CustomerId { get; set; }
 
     public string? Title { get; set; }

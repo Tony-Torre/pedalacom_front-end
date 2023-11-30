@@ -29,10 +29,9 @@ public partial class CredentialWorks2024Context : DbContext
         {
             entity.HasKey(e => e.CustomerId).HasName("PK__Customer__A4AE64B835574E4B");
 
-            entity.ToTable("Cw_Customer");
+            entity.ToTable("CwCustomer");
 
             entity.Property(e => e.CustomerId)
-                .ValueGeneratedNever()
                 .HasColumnName("CustomerID");
             entity.Property(e => e.CompanyName).HasMaxLength(128);
             entity.Property(e => e.EmailAddress).HasMaxLength(50);
