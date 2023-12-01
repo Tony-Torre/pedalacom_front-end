@@ -12,12 +12,17 @@ import { ProductsCardComponent } from '../../model/productsCard/products-card.co
 })
 export class ProductsComponent {
   private offcanvasService = inject(NgbOffcanvas);
-  
+  isOffcanvasOpen: boolean = false;
+
   value: string = 'Prezzo: In ordine crescente';
   page: number = 1;
   totalPage: number = 49;
   search: string = 'biciclette';
-  isOffcanvasOpen: boolean = false;
+  categoryList = ['Accessories', 'Bib-Shorts', 'Bike Racks','Bike Stands','Bikes','Bottles and Cages','Bottom Brackets','Brakes','Caps','Chains',
+                  'Cleaners','Clothing','Components','Cranksets','Derailleurs','Fenders','Forks','Gloves','Handlebars','Headsets','Helmets',
+                  'Hydration Packs','Jerseys','Lights','Locks','Mountain Bikes','Mountain Frames','Panniers','Pedals','Pumps','Road Bikes',
+                  'Road Frames','Saddles','Shorts','Socks','Tights','Tires and Tubes','Touring Bikes','Touring Frames','Vests','Wheels']
+
 
   open(content: TemplateRef<any>) {
 

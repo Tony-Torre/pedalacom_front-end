@@ -2,30 +2,54 @@
   <div class="d-flex flex-wrap justify-content-between align-items-center header-container mx-5 py-2">
     <p class="m-0">{{ page }} - {{ totalPage }} pagine in <span class="fw-bolder">#{{ search }}</span></p>
     <div class="btn-group d-none d-sm-block">
-      <button type="button" class="dropdown-toggle btn rounded-lg shadow p-0 px-2" data-bs-toggle="dropdown" aria-expanded="false">
+      <button type="button" class="dropdown-toggle btn rounded-lg shadow p-0 px-2" data-bs-toggle="dropdown"
+        aria-expanded="false">
         Ordina per: {{ value }} <i class="fa-solid fa-chevron-down"></i>
       </button>
       <ul class="dropdown-menu py-0">
-        <li><a #v1 class="dropdown-item border-bottom" [style.display]="v1.text == value ? 'none' : 'block'" (click)="value=v1.text" id="v1">In Evidenza</a></li>
-        <li><a #v2 class="dropdown-item border-bottom" [style.display]="v2.text == value ? 'none' : 'block'" (click)="value=v2.text" id="v2">Prezzo: In ordine crescente</a></li>
-        <li><a #v3 class="dropdown-item border-bottom" [style.display]="v3.text == value ? 'none' : 'block'" (click)="value=v3.text" id="v3" >Prezzo: In ordine decrescente</a></li>
-        <li><a #v4 class="dropdown-item" [style.display]="v4.text == value ? 'none' : 'block'" (click)="value=v4.text" id="v4">Ultimi arrivi</a></li>
+        <li><a #v1 class="dropdown-item border-bottom" [style.display]="v1.text == value ? 'none' : 'block'"
+            (click)="value=v1.text" id="v1">In Evidenza</a></li>
+        <li><a #v2 class="dropdown-item border-bottom" [style.display]="v2.text == value ? 'none' : 'block'"
+            (click)="value=v2.text" id="v2">Prezzo: In ordine crescente</a></li>
+        <li><a #v3 class="dropdown-item border-bottom" [style.display]="v3.text == value ? 'none' : 'block'"
+            (click)="value=v3.text" id="v3">Prezzo: In ordine decrescente</a></li>
+        <li><a #v4 class="dropdown-item" [style.display]="v4.text == value ? 'none' : 'block'" (click)="value=v4.text"
+            id="v4">Ultimi arrivi</a></li>
       </ul>
     </div>
     <div class="d-block d-sm-none">
       <button class="btn rounded-lg shadow p-0 px-2" (click)="open(content)">
-        Filter <i class="fa-solid" [ngClass]="{'fa-chevron-down': !isOffcanvasOpen, 'fa-chevron-up': isOffcanvasOpen}"></i>
+        Filter <i class="fa-solid"
+          [ngClass]="{'fa-chevron-down': !isOffcanvasOpen, 'fa-chevron-up': isOffcanvasOpen}"></i>
       </button>
     </div>
   </div>
 </div>
+<div class="d-flex border border-danger">
+  <div class=" d-none d-sm-block flex-column border border-success filter-bar">
+    <div class="container border border-primary">
+      test
+    </div>
+    <div class="d-flex flex-row w-100">
+
+      <div class="p-1 border border-danger w-10">
+          <input class="form-check-input mt-0" type="checkbox">
+      </div>
+      <div class="border border-success w-100">2</div>
+
+    </div>
+  </div>
+  <main class="border border-info">
+
+  </main>
+</div>
 
 <ng-template #content>
-	<div class="offcanvas-header">
-		<h4 class="offcanvas-title">Offcanvas title</h4>
-		<button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
-	</div>
-	<div class="offcanvas-body">
-		<p>One fine body&hellip;</p>
-	</div>
+  <div class="offcanvas-header">
+    <h4 class="offcanvas-title">Offcanvas title</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>One fine body&hellip;</p>
+  </div>
 </ng-template>
