@@ -1,6 +1,6 @@
 import { Component, TemplateRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbModule, NgbOffcanvas, OffcanvasDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsCardComponent } from '../../model/productsCard/products-card.component';
 
 @Component({
@@ -34,7 +34,6 @@ export class ProductsComponent {
 
   close() {
     this.offcanvasService.dismiss()
-    
   }
   
   toggleIcon() {
