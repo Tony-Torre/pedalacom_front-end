@@ -17,6 +17,8 @@ namespace WebAppPedalaCom
             builder.Services.AddControllers().AddJsonOptions(opt => opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
             builder.Services.AddDbContext<AdventureWorksLt2019Context>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection2019")));
+            builder.Services.AddDbContext<CredentialWorks2024Context>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection2024")));
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
