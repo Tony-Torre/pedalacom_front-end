@@ -4,17 +4,17 @@
 		<div class="btn-group d-md-none d-sm-none d-none d-lg-block">
 			<button type="button" class="dropdown-toggle btn rounded-lg shadow p-0 px-2" data-bs-toggle="dropdown"
 				aria-expanded="false">
-				Ordina per: {{ value }} <i class="fa-solid fa-chevron-down"></i>
+				Ordina per: {{ valueFilter }} <i class="fa-solid fa-chevron-down"></i>
 			</button>
 			<ul class="dropdown-menu py-0">
-				<li><a #v1 class="dropdown-item border-bottom" [style.display]="v1.text == value ? 'none' : 'block'"
-						(click)="value=v1.text" id="v1">In Evidenza</a></li>
-				<li><a #v2 class="dropdown-item border-bottom" [style.display]="v2.text == value ? 'none' : 'block'"
-						(click)="value=v2.text" id="v2">Prezzo: In ordine crescente</a></li>
-				<li><a #v3 class="dropdown-item border-bottom" [style.display]="v3.text == value ? 'none' : 'block'"
-						(click)="value=v3.text" id="v3">Prezzo: In ordine decrescente</a></li>
-				<li><a #v4 class="dropdown-item" [style.display]="v4.text == value ? 'none' : 'block'"
-						(click)="value=v4.text" id="v4">Ultimi arrivi</a></li>
+				<li><a #v1 class="dropdown-item border-bottom" [style.display]="v1.text == valueFilter ? 'none' : 'block'"
+						(click)="valueFilter=v1.text" id="v1">In Evidenza</a></li>
+				<li><a #v2 class="dropdown-item border-bottom" [style.display]="v2.text == valueFilter ? 'none' : 'block'"
+						(click)="valueFilter=v2.text" id="v2">Prezzo: In ordine crescente</a></li>
+				<li><a #v3 class="dropdown-item border-bottom" [style.display]="v3.text == valueFilter ? 'none' : 'block'"
+						(click)="valueFilter=v3.text" id="v3">Prezzo: In ordine decrescente</a></li>
+				<li><a #v4 class="dropdown-item" [style.display]="v4.text == valueFilter ? 'none' : 'block'"
+						(click)="valueFilter=v4.text" id="v4">Ultimi arrivi</a></li>
 			</ul>
 		</div>
 		<div class="d-md-block d-lg-none">
@@ -44,7 +44,7 @@
 		</div>
 
 		<div>
-			<p class="py-1 m-0">Categorie: </p>
+			<p class="py-1 m-0">Componenti: </p>
 			<ng-container *ngFor="let item of componentsList">
 				<div class="d-flex flex-row w-100">
 					<div class="p-1 border border-danger w-10">
@@ -56,7 +56,7 @@
 		</div>
 
 		<div>
-			<p class="py-1 m-0">Categorie: </p>
+			<p class="py-1 m-0">Vestiario: </p>
 			<ng-container *ngFor="let item of clothingsList">
 				<div class="d-flex flex-row w-100">
 					<div class="p-1 border border-danger w-10">
@@ -68,7 +68,7 @@
 		</div>
 
 		<div>
-			<p class="py-1 m-0">Categorie: </p>
+			<p class="py-1 m-0">Accessori: </p>
 			<ng-container *ngFor="let item of accessoriesList">
 				<div class="d-flex flex-row w-100">
 					<div class="p-1 border border-danger w-10">
@@ -87,10 +87,62 @@
 
 <ng-template #content>
 	<div class="offcanvas-header">
-		<h4 class="offcanvas-title">Offcanvas title</h4>
+		<h4 class="offcanvas-title">Filtra per: </h4>
 		<button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
 	</div>
 	<div class="offcanvas-body">
-		<p>One fine body&hellip;</p>
+		<div class="container d-flex flex-row gap-3">
+			<button #v1 type="button" class="btn rounded-lg shadow p-0 px-2" [ngClass]="{ 'pressedBtn': btnID === 'v1' }" (click)="mobileFilterData(v1, 'v1')">In Evidenza</button>
+			<button #v2 type="button" class="btn rounded-lg shadow p-0 px-2" [ngClass]="{ 'pressedBtn': btnID === 'v2' }" (click)="mobileFilterData(v2, 'v2')">Prezzo: In ordine crescente</button>
+			<button #v3 type="button" class="btn rounded-lg shadow p-0 px-2" [ngClass]="{ 'pressedBtn': btnID === 'v3' }" (click)="mobileFilterData(v3, 'v3')">Prezzo: In ordine decrescente</button>
+			<button #v4 type="button" class="btn rounded-lg shadow p-0 px-2" [ngClass]="{ 'pressedBtn': btnID === 'v4' }" (click)="mobileFilterData(v4, 'v4')">Ultimi arrivi</button>
+		</div>
+		<div>
+			<p class="py-1 m-0">Categorie: </p>
+			<ng-container *ngFor="let item of categoryList">
+				<div class="d-flex flex-row w-100">
+					<div class="p-1 border border-danger w-10">
+						<input class="form-check-input mt-0" type="checkbox">
+					</div>
+					<div class="border border-success w-100">{{ item.ita }}</div>
+				</div>
+			</ng-container>
+		</div>
+
+		<div>
+			<p class="py-1 m-0">Componenti: </p>
+			<ng-container *ngFor="let item of componentsList">
+				<div class="d-flex flex-row w-100">
+					<div class="p-1 w-10">
+						<input class="form-check-input mt-0" type="checkbox">
+					</div>
+					<div class="w-100">{{ item.ita }}</div>
+				</div>
+			</ng-container>
+		</div>
+
+		<div>
+			<p class="py-1 m-0">Vestiario: </p>
+			<ng-container *ngFor="let item of clothingsList">
+				<div class="d-flex flex-row w-100">
+					<div class="p-1 w-10">
+						<input class="form-check-input mt-0" type="checkbox">
+					</div>
+					<div class="w-100">{{ item.ita }}</div>
+				</div>
+			</ng-container>
+		</div>
+
+		<div>
+			<p class="py-1 m-0">Accessori: </p>
+			<ng-container *ngFor="let item of accessoriesList">
+				<div class="d-flex flex-row w-100">
+					<div class="p-1 w-10">
+						<input class="form-check-input mt-0" type="checkbox">
+					</div>
+					<div class="w-100">{{ item.ita }}</div>
+				</div>
+			</ng-container>
+		</div>
 	</div>
 </ng-template>

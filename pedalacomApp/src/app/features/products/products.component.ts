@@ -11,13 +11,15 @@ import { ProductsCardComponent } from '../../model/productsCard/products-card.co
 	styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
+[x: string]: any;
 	private offcanvasService = inject(NgbOffcanvas);
 	isOffcanvasOpen: boolean = false;
 
-	value: string = 'Prezzo: In ordine crescente';
+	valueFilter: string = 'Prezzo: In ordine crescente'
+	btnID: string = ''
 	page: number = 1;
 	totalPage: number = 49;
-	search: string = 'biciclette';
+	search: string = 'biciclette'
 
 	categoryList = [
 		{ data: "Bikes", ita: "Biciclette" },
@@ -90,6 +92,13 @@ export class ProductsComponent {
 
 	toggleIcon() {
 		this.isOffcanvasOpen = !this.isOffcanvasOpen;
+	}
+
+	mobileFilterData(btn: HTMLButtonElement, id: string) {
+		this.valueFilter = btn.value
+		this.btnID = id
+		console.log(this.btnID);
+		
 	}
 
 }

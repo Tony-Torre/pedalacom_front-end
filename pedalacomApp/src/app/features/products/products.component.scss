@@ -41,3 +41,16 @@ div.filter-bar{
 main{
     width: 75%;
 }
+
+div.offcanvas-body {
+    .container > button {
+        background-color: var(--primary);
+        border: 1.5px solid var(--darker-primary);
+        font-size: 12px !important;
+    }
+}
+
+.pressedBtn {
+    background-color: var(--accent) !important;
+    border: 1.5px solid var(--darker-accent) !important;
+}
