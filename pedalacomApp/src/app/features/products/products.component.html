@@ -1,3 +1,16 @@
-<div class="row card-container g-3 p-2">
-segnaposto
+<div class="border border-danger header-element my-0 py-0">
+  <div class="container d-flex flex-wrap justify-content-between header-container">
+    <p>1</p>
+    <div class="btn-group">
+      <button type="button" class="dropdown-toggle btn rounded-lg my-2 shadow p-0 px-2" data-bs-toggle="dropdown" aria-expanded="false">
+        Ordina per: {{ value }} <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <ul class="dropdown-menu py-0">
+        <li><a #v1 class="dropdown-item border-bottom" [style.display]="v1.text == value ? 'none' : 'block'" (click)="value=v1.text" id="v1">In Evidenza</a></li>
+        <li><a #v2 class="dropdown-item border-bottom" [style.display]="v2.text == value ? 'none' : 'block'" (click)="value=v2.text" id="v2">Prezzo: In ordine crescente</a></li>
+        <li><a #v3 class="dropdown-item border-bottom" [style.display]="v3.text == value ? 'none' : 'block'" (click)="value=v3.text" id="v3" >Prezzo: In ordine decrescente</a></li>
+        <li><a #v4 class="dropdown-item" [style.display]="v4.text == value ? 'none' : 'block'" (click)="value=v4.text" id="v4">Ultimi arrivi</a></li>
+      </ul>
+    </div>
+  </div>
 </div>

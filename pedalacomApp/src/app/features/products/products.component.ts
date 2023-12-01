@@ -11,5 +11,6 @@ import { ProductsCardComponent } from '../../model/productsCard/products-card.co
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
+  value: string = "Prezzo: In ordine crescente";
 
 }

@@ -1,4 +1,28 @@
-.card-container {
-    max-width: 1350px;
-    margin: 0;
+div.header-element{
+    background-color: var(--core-background) !important;
+    height: 2.3rem;
+    div.header-container{
+        background-color: var(--core-background) !important;
+        
+        button {
+            background-color: var(--primary);
+            border: 1.5px solid var(--darker-primary);
+            font-size: 12px !important;
+            height: 20px;
+        }
+
+        button:after{
+            content: none;
+        }
+
+        .dropdown-menu {
+            background-color: var(--core-background)!important ;
+
+            #v1:hover, #v2:hover, #v3:hover, #v4:hover {
+                background-color: var(--darker-core-background)!important ;
+            }
+
+        }
+    }
 }
+
