@@ -1,5 +1,8 @@
 :root {
     --main-background: #efeeee;
+    
+    --core-background: #f8f9fa;
+    --core-darker-background: #dcdee0;
 
     --section-background: #e1dddddb;
     --section-darker-background: #c1bebedb;
@@ -13,4 +16,5 @@
     --secondary: #f1f5f9;
 
     --text: #02050d;
+
 }
