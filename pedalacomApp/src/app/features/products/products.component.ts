@@ -1,19 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// IMPORT CUSTOM COMPONENTS
+import { NgbModule, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsCardComponent } from '../../model/productsCard/products-card.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, ProductsCardComponent],
+  imports: [CommonModule, NgbModule, ProductsCardComponent],
   templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+  styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
-  value: string = "Prezzo: In ordine crescente";
-  page: number = 1
+  private offcanvasService = inject(NgbOffcanvas);
+  
+  value: string = 'Prezzo: In ordine crescente';
+  page: number = 1;
   totalPage: number = 49;
-  search: string = "biciclette"
+  search: string = 'biciclette';
+  isOffcanvasOpen: boolean = false;
 
+  openBottom(content: TemplateRef<any>) {
+		this.offcanvasService.open(content, { position: 'bottom' });
+    this.toggleOffcanvas()
+  }
+  
+  toggleOffcanvas() {
+    this.isOffcanvasOpen = !this.isOffcanvasOpen;
+  }
 }

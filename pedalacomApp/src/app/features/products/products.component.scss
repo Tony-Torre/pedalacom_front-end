@@ -1,15 +1,8 @@
 div.header-element {
     background-color: var(--core-background) !important;
-    height: 2.3rem;
-
-    @media (max-width: 2560px) and (min-width: 1070px) {
-        height: 2.5rem;
-    }
-
     >div.header-container {
         background-color: var(--core-background) !important;
-        height: 2.3rem;
-
+        
         p > span {
             color: var(--primary);
         }
@@ -39,3 +32,4 @@ div.header-element {
 #v1:hover, #v2:hover, #v3:hover, #v4:hover {
     background-color: var(--core-darker-background);
 }
+

@@ -1,7 +1,7 @@
 <div class="header-element py-0 mb-3">
-  <div class="d-flex flex-wrap justify-content-between align-items-center header-container mx-5">
+  <div class="d-flex flex-wrap justify-content-between align-items-center header-container mx-5 py-2">
     <p class="m-0">{{ page }} - {{ totalPage }} pagine in <span class="fw-bolder">#{{ search }}</span></p>
-    <div class="btn-group">
+    <div class="btn-group d-none d-sm-block">
       <button type="button" class="dropdown-toggle btn rounded-lg shadow p-0 px-2" data-bs-toggle="dropdown" aria-expanded="false">
         Ordina per: {{ value }} <i class="fa-solid fa-chevron-down"></i>
       </button>
@@ -12,6 +12,20 @@
         <li><a #v4 class="dropdown-item" [style.display]="v4.text == value ? 'none' : 'block'" (click)="value=v4.text" id="v4">Ultimi arrivi</a></li>
       </ul>
     </div>
+    <div class="d-block d-sm-none">
+      <button class="btn rounded-lg shadow p-0 px-2" (click)="openBottom(content)">
+        Filter <i class="fa-solid" [ngClass]="{'fa-chevron-down': !isOffcanvasOpen, 'fa-chevron-up': isOffcanvasOpen}"></i>
+      </button>
+    </div>
   </div>
 </div>
 
+<ng-template #content>
+	<div class="offcanvas-header">
+		<h4 class="offcanvas-title">Offcanvas title</h4>
+		<button type="button" class="btn-close" aria-label="Close" ></button>
+	</div>
+	<div class="offcanvas-body">
+		<p>One fine body&hellip;</p>
+	</div>
+</ng-template>
