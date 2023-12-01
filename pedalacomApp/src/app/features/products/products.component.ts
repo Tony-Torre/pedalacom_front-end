@@ -1,6 +1,6 @@
 import { Component, TemplateRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbModule, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbOffcanvas, OffcanvasDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsCardComponent } from '../../model/productsCard/products-card.component';
 
 @Component({
@@ -19,12 +19,26 @@ export class ProductsComponent {
   search: string = 'biciclette';
   isOffcanvasOpen: boolean = false;
 
-  openBottom(content: TemplateRef<any>) {
-		this.offcanvasService.open(content, { position: 'bottom' });
-    this.toggleOffcanvas()
+  open(content: TemplateRef<any>) {
+
+      this.offcanvasService.open(content,{ position: 'bottom', ariaLabelledBy: 'offcanvas-basic-title' }).result.then(
+        (result) => {
+          this.toggleIcon()
+        },
+        (reason) => {
+          this.toggleIcon()
+        },
+      );
+    this.toggleIcon()
+  }
+
+  close() {
+    this.offcanvasService.dismiss()
+    
   }
   
-  toggleOffcanvas() {
+  toggleIcon() {
     this.isOffcanvasOpen = !this.isOffcanvasOpen;
   }
+
 }
