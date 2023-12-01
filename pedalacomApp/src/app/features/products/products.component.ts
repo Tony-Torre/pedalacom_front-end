@@ -12,5 +12,8 @@ import { ProductsCardComponent } from '../../model/productsCard/products-card.co
 })
 export class ProductsComponent {
   value: string = "Prezzo: In ordine crescente";
+  page: number = 1
+  totalPage: number = 49;
+  search: string = "biciclette"
 
 }
