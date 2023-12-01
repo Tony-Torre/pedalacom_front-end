@@ -4,45 +4,92 @@ import { NgbModule, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsCardComponent } from '../../model/productsCard/products-card.component';
 
 @Component({
-  selector: 'app-products',
-  standalone: true,
-  imports: [CommonModule, NgbModule, ProductsCardComponent],
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss'],
+	selector: 'app-products',
+	standalone: true,
+	imports: [CommonModule, NgbModule, ProductsCardComponent],
+	templateUrl: './products.component.html',
+	styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
-  private offcanvasService = inject(NgbOffcanvas);
-  isOffcanvasOpen: boolean = false;
+	private offcanvasService = inject(NgbOffcanvas);
+	isOffcanvasOpen: boolean = false;
 
-  value: string = 'Prezzo: In ordine crescente';
-  page: number = 1;
-  totalPage: number = 49;
-  search: string = 'biciclette';
-  categoryList = ['Accessories', 'Bib-Shorts', 'Bike Racks','Bike Stands','Bikes','Bottles and Cages','Bottom Brackets','Brakes','Caps','Chains',
-                  'Cleaners','Clothing','Components','Cranksets','Derailleurs','Fenders','Forks','Gloves','Handlebars','Headsets','Helmets',
-                  'Hydration Packs','Jerseys','Lights','Locks','Mountain Bikes','Mountain Frames','Panniers','Pedals','Pumps','Road Bikes',
-                  'Road Frames','Saddles','Shorts','Socks','Tights','Tires and Tubes','Touring Bikes','Touring Frames','Vests','Wheels']
+	value: string = 'Prezzo: In ordine crescente';
+	page: number = 1;
+	totalPage: number = 49;
+	search: string = 'biciclette';
 
+	categoryList = [
+		{ data: "Bikes", ita: "Biciclette" },
+		{ data: "Mountain Bikes", ita: "Mountain Bikes" },
+		{ data: "Road Bikes", ita: "Bici da strada" },
+		{ data: "Touring Bikes", ita: "Bici da turismo" }
+	]
 
-  open(content: TemplateRef<any>) {
+	accessoriesList = [
+		{ data: "Accessories", ita: "Accessori" },
+		{ data: "Bike Stands", ita: "Portabici" },
+		{ data: "Bottles and Cages", ita: "Borraccia & Porta borraccia" },
+		{ data: "Cleaners", ita: "kit di pulizia" },
+		{ data: "Locks", ita: "Lucchetti" },
+		{ data: "Lights", ita: "Luci" },
+		{data: "Pumps", ita: "Pompe"}
+	]
 
-      this.offcanvasService.open(content,{ position: 'bottom', ariaLabelledBy: 'offcanvas-basic-title' }).result.then(
-        (result) => {
-          this.toggleIcon()
-        },
-        (reason) => {
-          this.toggleIcon()
-        },
-      );
-    this.toggleIcon()
-  }
+	clothingsList = [
+		{ data: "Clothing", ita: "Vestiti" },
+		{ data: "Bib-Shorts", ita: "Pantaloncini con bretelle" },
+		{ data: "Gloves", ita: "Guanti" },
+		{ data: "Headsets", ita: "Cuffie" },
+		{ data: "Helmets", ita: "Caschi" },
+		{ data: "Hydration Packs", ita: "Zaini idrici" },
+		{ data: "Jerseys", ita: "Maglie" },
+		{ data: "Panniers", ita: "Borse laterali" },
+		{ data: "Shorts", ita: "Pantaloncini" },
+		{ data: "Socks", ita: "Calze" },
+		{ data: "Tights", ita: "Collant" },
+		{ data: "Vests", ita: "Gillet" }
+	]
 
-  close() {
-    this.offcanvasService.dismiss()
-  }
-  
-  toggleIcon() {
-    this.isOffcanvasOpen = !this.isOffcanvasOpen;
-  }
+	componentsList = [
+			{data: "Components", ita: "Componenti"},
+			{data: "Bottom Brackets", ita: "Staffe inferiori"},
+			{data: "Brakes", ita: "Freni"},
+			{data: "Caps", ita: "Tappi"},
+			{data: "Chains", ita: "Catene"},
+			{data: "Guarniture", ita: "Guarniture"},
+			{data: "Derailleurs", ita: "Deragliatori"},
+			{data: "Fenders", ita: "Parafanghi"},
+			{data: "Forks", ita: "Forcelle"},
+			{data: "Handlebars", ita: "Manubri"},
+			{data: "Pedals", ita: "Pedali"},
+			{data: "Saddles", ita: "Selle"},
+			{data: "Wheels", ita: "Cerchioni"},
+			{data: "Tires and Tubes", ita: "pneumatici e budelli"},
+			{data: "Touring Frames", ita: "Telai da turismo"},
+			{data: "Road Frames", ita: "Telai da strada"},
+			{data: "Mountain Frames", ita: "Telai da mountain bike"}
+	]
+
+	open(content: TemplateRef<any>) {
+
+		this.offcanvasService.open(content, { position: 'bottom', ariaLabelledBy: 'offcanvas-basic-title' }).result.then(
+			(result) => {
+				this.toggleIcon()
+			},
+			(reason) => {
+				this.toggleIcon()
+			},
+		);
+		this.toggleIcon()
+	}
+
+	close() {
+		this.offcanvasService.dismiss()
+	}
+
+	toggleIcon() {
+		this.isOffcanvasOpen = !this.isOffcanvasOpen;
+	}
 
 }
