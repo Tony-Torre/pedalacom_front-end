@@ -2,16 +2,71 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // IMPORT CUSTOM COMPONENTS
 import { CarouselComponent } from '../../model/carousel/carousel.component';
-import { SalesSectionComponent } from '../../model/salesSection/SalesSection.component';
+
 import { CardComponent } from '../../model/homeCard/card.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SalesSectionComponent } from '../../model/SalesSection/SalesSection.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CarouselComponent, SalesSectionComponent, CardComponent],
+  imports: [SlickCarouselModule,CommonModule, CarouselComponent, SalesSectionComponent, CardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
 
+export class HomeComponent {
+  slides = [
+    {img: "http://placehold.it/350x150/000000"},
+    {img: "http://placehold.it/350x150/111111"},
+    {img: "http://placehold.it/350x150/333333"},
+    {img: "http://placehold.it/350x150/666666"},
+    {img: "http://placehold.it/350x150/000000"},
+    {img: "http://placehold.it/350x150/111111"},
+    {img: "http://placehold.it/350x150/333333"},
+    {img: "http://placehold.it/350x150/666666"},
+    {img: "http://placehold.it/350x150/000000"},
+    {img: "http://placehold.it/350x150/111111"},
+    {img: "http://placehold.it/350x150/333333"},
+    {img: "http://placehold.it/350x150/666666"}
+  ]
+  ;
+
+  slideConfig = {
+    dots:false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: false,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+};
+  
 }
+
