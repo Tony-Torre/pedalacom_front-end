@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // IMPORT CUSTOM COMPONENTS
 import { CarouselComponent } from '../../model/carousel/carousel.component';
@@ -6,15 +6,18 @@ import { CarouselComponent } from '../../model/carousel/carousel.component';
 import { CardComponent } from '../../model/homeCard/card.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SalesSectionComponent } from '../../model/SalesSection/SalesSection.component';
+// IMPORT SERVICES
+import { ProductApiServiceService } from '../../shared/CRUD/product-api-service.service';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [SlickCarouselModule,CommonModule, CarouselComponent, SalesSectionComponent, CardComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  providers: [ProductApiServiceService]
 })
-
 export class HomeComponent {
   slides = [
     {img: "http://placehold.it/350x150/000000"},
@@ -67,6 +70,6 @@ export class HomeComponent {
       // instead of a settings object
     ]
 };
-  
+ 
 }
 

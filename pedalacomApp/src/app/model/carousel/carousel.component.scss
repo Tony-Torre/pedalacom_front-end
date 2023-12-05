@@ -1,5 +1,5 @@
 #carousel{
-    height: 30rem;
+    height: calc(100vh - 64px); // view Height - navbar's Height
         display: grid;
         justify-content: center;
         align-content: center;
