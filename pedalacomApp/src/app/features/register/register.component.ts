@@ -35,15 +35,17 @@ export class RegisterComponent {
       FirstName  : firstName,
       MiddleName  : middleName,
       LastName  : lastName,
-      Email  : email,
-      Password  : password,
+      EmailAddress  : email,
+      PasswordHash  : password,
       CompanyName  : companyName,
-      PhoneNumber  : phoneNumber,
+      Phone  : phoneNumber,
     }
+
+    console.log(cst)
 
     this.registration.postCustomer(cst).subscribe((resp)=>{
       if(resp.status == 200 || resp.status == 201){
-        console.log("Sei registrato")
+        this.registration.setLoggedToken(cst.EmailAddress, resp.body.customerId)
       }else{
         console.log("non sei registrato")
       }

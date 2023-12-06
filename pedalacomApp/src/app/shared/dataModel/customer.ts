@@ -3,8 +3,8 @@ export class Customer{
     FirstName : string = "";
     MiddleName : string = "";
     LastName : string = "";
-    Email : string = "";
-    Password : string = "";
+    EmailAddress : string = "";
+    PasswordHash : string = "";
     CompanyName : string = "";
-    PhoneNumber : string = ""
+    Phone : string = ""
 }
