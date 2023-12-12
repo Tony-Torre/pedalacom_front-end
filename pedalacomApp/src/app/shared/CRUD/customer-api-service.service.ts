@@ -61,11 +61,17 @@ export class CustomerApiServiceService {
       this.headerOptions.set('Authorization', 'Basic '+ btoa(user + ':' + password))
   }
 
-  setLoggedToken(user: string, id: number)
+  setLoggedToken(email: string, user: string, id: number, remember: boolean)
   {
-    localStorage.setItem('username', user)
-    localStorage.setItem('id', id.toString())
-
+    if(remember){
+      localStorage.setItem('username', user)
+      localStorage.setItem('id', id.toString())
+      localStorage.setItem('email', email)
+    }else{
+      sessionStorage.setItem('username', user)
+      sessionStorage.setItem('id', id.toString())
+      sessionStorage.setItem('email', email)
+    }
   }
 
 }

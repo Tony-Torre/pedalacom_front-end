@@ -14,6 +14,7 @@ import { Customer } from '../../shared/dataModel/customer';
 })
 export class RegisterComponent {
 
+  remember: boolean = false;
   
   constructor( private registration : CustomerApiServiceService){}
 
@@ -25,6 +26,10 @@ export class RegisterComponent {
     } else{
       this.samePassword = false;
     }
+  }
+
+  checkControl(){
+    this.remember = !this.remember
   }
 
   sendRegistration(title : string,firstName : string,middleName : string,lastName : string,email : string,password : string,companyName : string,phoneNumber : string){
@@ -42,10 +47,11 @@ export class RegisterComponent {
     }
 
     console.log(cst)
+    
 
     this.registration.postCustomer(cst).subscribe((resp)=>{
       if(resp.status == 200 || resp.status == 201){
-        this.registration.setLoggedToken(cst.EmailAddress, resp.body.customerId)
+        this.registration.setLoggedToken(cst.EmailAddress, cst.FirstName, resp.body.customerId, this.remember)
       }else{
         console.log("non sei registrato")
       }
