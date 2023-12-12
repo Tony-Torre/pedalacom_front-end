@@ -1,4 +1,4 @@
-<div class="singin-container mx-auto mb-5">
+<div class="singin-container mx-auto mb-5 pt-5">
     <form class="p-3">
         <div class="mb-3">
             <h3 class="h3 mb-3 fw-normal d-inline">Please sign in</h3>
@@ -20,7 +20,7 @@
         </div>
         <button class="btn w-100 py-2 mt-2" type="submit" (click)="runLogin($event, email.value, password.value)">Sign in <i class="fa-solid fa-bicycle"></i></button>
         <div class="text-center mt-4 mb-2">
-          <span class="mt-4 mb-3">New to Pedalacom? <a class="singup-link"> Sign Up Here!</a></span>
+          <span class="mt-4 mb-3">New to Pedalacom? <a routerLink="/register" class="singup-link"> Sign Up Here!</a></span>
         </div>
       </form>
 </div>
