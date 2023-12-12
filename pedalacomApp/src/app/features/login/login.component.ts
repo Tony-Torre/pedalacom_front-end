@@ -23,6 +23,7 @@ export class LoginComponent {
       next:(data: any) => {
         console.log(data)
         this.loginService.setLoggedToken(email, data.body.firstName, data.body.customerId, this.remember)
+        this.redirect()
       },
       error: (err: any)=>{
         console.log(err)
@@ -35,25 +36,14 @@ export class LoginComponent {
     this.remember = !this.remember
   }
 
-  ngOnInit(){
+  redirect(){
     if(localStorage.getItem("username") || sessionStorage.getItem("username")){
+      localStorage.setItem("login", "first_access");
       this.router.navigate(['/']);
     }
   }
 
-  /* runLogin(email: string, password: string)
-  {
-    this.login.loginCustomer(email, password).subscribe((resp)=>{
-      if(resp.status == 200 || resp.status == 201){
-        console.log("sei loggato")
-        this.login.setLoggedToken(email, resp.body.customerId)
-        console.log(resp)
-        
-      }else{
-        console.log("non sei loggato")
-      }
-    });
-  } */
-
-  
+  ngOnInit(){
+    this.redirect()
+  }
 }

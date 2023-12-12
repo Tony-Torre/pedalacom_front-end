@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CustomerApiServiceService } from '../../shared/CRUD/customer-api-service.service';
 import { FormsModule } from '@angular/forms';
 import { Customer } from '../../shared/dataModel/customer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -16,15 +17,26 @@ export class RegisterComponent {
 
   remember: boolean = false;
   
-  constructor( private registration : CustomerApiServiceService){}
+  constructor( private registration : CustomerApiServiceService, private router: Router){}
 
   samePassword :boolean = false
+
+  ngOnInit(){
+    this.redirect()
+  }
   
   PasswordCheck(password: string, checkPassword: string){
     if(password === checkPassword && password != ''){
       this.samePassword = true;
     } else{
       this.samePassword = false;
+    }
+  }
+
+  redirect(){
+    if(localStorage.getItem("username") || sessionStorage.getItem("username")){
+      localStorage.setItem("register", "first_registration");
+      this.router.navigate(['/']);
     }
   }
 
@@ -45,13 +57,10 @@ export class RegisterComponent {
       CompanyName  : companyName,
       Phone  : phoneNumber,
     }
-
-    console.log(cst)
-    
-
     this.registration.postCustomer(cst).subscribe((resp)=>{
       if(resp.status == 200 || resp.status == 201){
         this.registration.setLoggedToken(cst.EmailAddress, cst.FirstName, resp.body.customerId, this.remember)
+        this.redirect()
       }else{
         console.log("non sei registrato")
       }
