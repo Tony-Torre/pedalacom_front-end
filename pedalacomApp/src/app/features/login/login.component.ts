@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomerApiServiceService } from '../../shared/CRUD/customer-api-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { CustomerApiServiceService } from '../../shared/CRUD/customer-api-servic
 })
 export class LoginComponent {
 
-  constructor (private loginService: CustomerApiServiceService) {}
+  constructor (private loginService: CustomerApiServiceService, private router: Router) {}
 
   remember: boolean = false;
 
@@ -32,6 +33,12 @@ export class LoginComponent {
 
   checkControl(){
     this.remember = !this.remember
+  }
+
+  ngOnInit(){
+    if(localStorage.getItem("username") || sessionStorage.getItem("username")){
+      this.router.navigate(['/']);
+    }
   }
 
   /* runLogin(email: string, password: string)

@@ -20,13 +20,19 @@
       </button> -->
       <!--  -->
           <a class="nav-link btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <button class="btn" style="font-size: 1.3em;">
+            <button (click)="checkLogged()" class="btn" style="font-size: 1.3em;">
               <i class="fa-solid fa-user nav-icon"></i>
             </button>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="/login">Accedi</a></li>
-            <li><a class="dropdown-item" routerLink="/register">Registrati</a></li>
+            <div *ngIf="userLogged; then Ok else Ko"></div>
+            <ng-template #Ok>
+              <button type="submit"(click)="logout()" class="btn">Logout</button>
+            </ng-template>
+            <ng-template #Ko>
+              <li><a class="dropdown-item" routerLink="/login">Accedi</a></li>
+              <li><a class="dropdown-item" routerLink="/register">Registrati</a></li>
+            </ng-template>
           </ul>
       <a class="btn" style="font-size: 1.3em;" routerLink="/cart">
         <i class="fa-solid fa-cart-shopping nav-icon" ></i>
