@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CustomerApiServiceService } from '../../shared/CRUD/customer-api-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -12,12 +13,15 @@ import { CustomerApiServiceService } from '../../shared/CRUD/customer-api-servic
 })
 export class NavbarComponent {
 
+  constructor (private router: Router){}
+
   userLogged = false
 
   logout(){
     sessionStorage.clear()
     localStorage.clear()
     this.checkLogged()
+    this.router.navigate(['/']);
   }
 
   ngOnInit(){

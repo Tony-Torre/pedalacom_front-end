@@ -19,6 +19,21 @@ import { ProductApiServiceService } from '../../shared/CRUD/product-api-service.
   providers: [ProductApiServiceService]
 })
 export class HomeComponent {
+
+  firstAccess: boolean = false;
+  firstRegistration: boolean = false;
+
+
+  ngOnInit(){
+    console.log(localStorage.getItem("register"))
+    if(localStorage.getItem("login") === "first_access"){
+      this.firstAccess = true
+      localStorage.removeItem("login")
+    }else if (localStorage.getItem("register") === "first_registration"){
+      this.firstRegistration = true
+      localStorage.removeItem("register")
+    }
+  }
   slides = [
     {img: "http://placehold.it/350x150/000000"},
     {img: "http://placehold.it/350x150/111111"},
