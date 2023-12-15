@@ -80,3 +80,4 @@ pedalacom
 
 il comando sarà simile a questo: 
 `git push --set-upstream *nome branch*`
+

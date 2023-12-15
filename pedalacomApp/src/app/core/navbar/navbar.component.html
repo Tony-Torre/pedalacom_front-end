@@ -1,0 +1,82 @@
+<nav class="shadow-sm px-3 bg-body-tertiary fixed-top">
+  <div class=" justify-content-between big_navbar align-items-center pb-2">
+    <div class="left-side d-flex align-items-center gap-2">
+      <h3 class="me-2">PedroBike</h3>
+      <div class="link d-flex gap-2 align-items-center">
+        <button class="single-link btn" routerLink="/">Home</button>
+        <button class="single-link btn" routerLink="/products">Prodotti</button>
+        <button class="single-link btn" routerLink="/contacts" >Contatti</button>
+      </div>
+    </div>
+    <div class="mid-side">
+      <form class="d-flex" role="search">
+        <input class="form-control" type="search" placeholder="Cerca una bici" aria-label="Search">
+        <button class="btn btn-outline-success btn-cerca" type="submit">Cerca</button>
+      </form>
+    </div>
+    <div class="right-side d-flex">
+      <!-- <button class="btn" style="font-size: 1.3em;">
+        <i class="fa-solid fa-user"></i>
+      </button> -->
+      <!--  -->
+          <a class="nav-link btn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button (click)="checkLogged()" class="btn" style="font-size: 1.3em;">
+              <i class="fa-solid fa-user nav-icon"></i>
+            </button>
+          </a>
+          <ul class="dropdown-menu">
+            <div *ngIf="userLogged; then Ok else Ko"></div>
+            <ng-template #Ok>
+              <button type="submit"(click)="logout()" class="btn">Logout</button>
+            </ng-template>
+            <ng-template #Ko>
+              <li><a class="dropdown-item" routerLink="/login">Accedi</a></li>
+              <li><a class="dropdown-item" routerLink="/register">Registrati</a></li>
+            </ng-template>
+          </ul>
+      <a class="btn" style="font-size: 1.3em;" routerLink="/cart">
+        <i class="fa-solid fa-cart-shopping nav-icon" ></i>
+      </a>
+    </div>
+  </div>
+  <!-- SMALL NAVABR  -->
+  <div class="small_navbar justify-content-between">
+    <div class="left-small-side">
+      <button class="btn" style="font-size: 2em;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <div class="offcanvas-title" id="offcanvasExampleLabel">PedroBike</div>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="link-small d-flex align-items-center flex-column">
+            <div class="single-link-small btn" routerLink="/">Home</div>
+            <div class="single-link-small btn" routerLink="/products">Prodotti</div>
+            <div class="single-link-small btn" routerLink="/contacts" >Contatti</div>
+            <div class="d-flex">
+              <button class="btn" style="font-size: 1.5em;">
+                <i class="fa-solid fa-user"></i>
+              </button>
+              <button class="btn" style="font-size: 1.5em;">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mid-small-size" >
+      <button class="btn" style="font-size: 2em;">
+        <i class="fa-brands fa-facebook"></i>
+      </button>
+    </div>
+    <div class="right-small-size">
+      <button class="btn" style="font-size: 2em;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </div>
+</nav>
